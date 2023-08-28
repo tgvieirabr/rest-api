@@ -15,7 +15,7 @@ function api_user_post($request)
 
 
     if (username_exists($username) || email_exists($email)) {
-        $response = new WP_Error('error', 'Dados incompletos', ['status' => 406]);
+        $response = new WP_Error('error', 'E-mail já cadastrado', ['status' => 403]);
         return rest_ensure_response($response);
 
     }
